@@ -22,7 +22,7 @@ header{
     position: sticky;
     top: 0;
     width: 100%;
-    height: 7.2;
+    height: 7.2rem;
     display: flex;
     background-color: rgba(0, 4, 7, 0.90);
     backdrop-filter: blur(4px);
@@ -64,7 +64,7 @@ header button{
     background-size: cover;
     height: 80rem;
     padding-top: 11.2rem;
-    padding-bottom: 14 .3rem;
+    padding-bottom: 14.3rem;
 }
 
 
@@ -222,6 +222,7 @@ header button{
     line-height: 150%;
 }
 
+/* ============================================== VIDEOS ============================================== */
 
 .s-videos{
     width: 100%;
@@ -230,38 +231,78 @@ header button{
     overflow: hidden;
 }
 
-.s-videos .top {
+.s-videos .container{
+    position: relative;
+}
+
+.s-videos .top{
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 3.2rem;
 }
 
-.s-videos .top h2 {
+.s-videos .top .swiper-pagination{
+    position: relative;
+    width: auto;
+    bottom: 0;
+}
+
+.s-videos .top .swiper-pagination .swiper-pagination-bullet{
+    width: 6px;
+    height: 6px;
+    border-radius: 0;
+    background-color: #2F2F3B;
+    opacity: 1;
+
+}
+
+.s-videos .top .swiper-pagination .swiper-pagination-bullet-active{
+    background-color: #FFFFFF;
+}
+
+
+
+.s-videos .top h2{
     font-size: 2.4rem;
     font-weight: 600;
     text-transform: uppercase;
 }
 
-.s-videos .card-video {
+.s-videos .card-video{
     display: block;
     width: 100%;
-    max-width: 39.1rem;
+    max-width: 35.1rem;
 }
 
-.s-videos .card-video .thumbnail {
+.s-videos .card-video .thumbnail{
     position: relative;
     width: 100%;
-    height: 21.6rem;
+    height: 21.0rem;
     margin-bottom: 2.2rem;
-    
 }
 
 .s-videos .card-video .thumbnail .thumb{
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover; 
+}
 
+.s-videos .card-video .thumbnail:before{
+    content: "";
+    background: url(/img/assets-spider-man-2/image-hover.svg) no-repeat center center;
+    width: 100%;
+    max-width: 39.1rem;
+    height: 22.2rem;
+    position: absolute;
+    top: -3px;
+    left: -5px;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.s-videos .card-video:hover .thumbnail:before{
+    opacity: 1;
 }
 
 .s-videos .card-video .thumbnail .icon{
@@ -272,6 +313,12 @@ header button{
     margin-left: -22px;
     opacity: 0;
     transition: opacity .3s ease;
+
+}
+
+.s-videos .card-video:hover .thumbnail .icon{
+    opacity: 1;
+
 }
 
 .s-videos .card-video span{
@@ -280,10 +327,38 @@ header button{
     font-weight: 500;
     line-height: 150%;
 }
-.s-videos .card-video:hover .thumbnail .icon{
-    opacity: 1;
+
+.s-videos .btn{
+    position: absolute;
+    top: 13.3rem;
+    width: 4rem;
+    height: 4rem;
+    background-color: #2F2F3B;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    transition: opacity .3s aese;
+  
 }
-============================================== FOOTER ==============================================
+
+.s-videos .btn.swiper-button-disabled{
+    opacity: 0;
+}
+
+.s-videos .btn-prev{
+    left: 0;
+    transform: rotate(180deg);
+}
+
+.s-videos .btn-next{
+    right: 0;
+}
+
+
+
+/* ============================================== FOOTER ============================================== */
 
 footer{
     position: relative;

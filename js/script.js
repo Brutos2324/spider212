@@ -6,8 +6,8 @@ var swiper = new Swiper(".slide-video", {
         el: ".s-videos .swiper-pagination",
         clickable: true,
     },
-    navigator: {
-        nextEL: ".s-videos .btn-next",
-        nextEL: ".s-videos .btn-prev"
+    navigation: {
+        nextEl: ".s-videos .btn-next",
+        prevEl: ".s-videos .btn-prev",
     },
 });

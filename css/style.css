@@ -1,16 +1,22 @@
-*{
+* {
     font-family: "Roboto", serif;
     color: #FFF;
 
 }
 
-html{
+html {
     background-color: #060608;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Mohave', sans-serif;
 }
+
 .container {
     width: 100%;
     max-width: 1246rem;
@@ -18,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 15px;
 }
 
-header{
+header {
     position: sticky;
     top: 0;
     width: 100%;
@@ -26,64 +32,98 @@ header{
     display: flex;
     background-color: rgba(0, 4, 7, 0.90);
     backdrop-filter: blur(4px);
+    z-index: 2023;
 }
 
-header .container{
+header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-header nav{
+header nav {
     display: flex;
     gap: 4.7rem;
-    
+
 }
 
-header nav a{
+header nav a {
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 150%;
+    transition: color .3s ease;
 
 }
 
-header button{
+header nav a:hover {
+    color: #F55827;
+}
+
+header button {
     border: 2px solid #2F2F3b;
     padding: 0.95rem 2.4rem;
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 150%;
     border-radius: 32px;
+
 }
 
-.s-hero{
+header button:hover {
+    background-color: #FFFFFF;
+    color: #101014;
+    box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.30);
+}
+
+
+.s-hero {
+    position: relative;
     width: 100%;
     background-image: url(../img/assets-spider-man-2/bg-hero.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
     background-size: cover;
+    background-attachment: fixed;
     height: 80rem;
     padding-top: 11.2rem;
     padding-bottom: 14.3rem;
+
+
+
+}
+
+.s-hero:after {
+    content: "";
+    width: 100%;
+    height: 21.6rem;
+    background: linear-gradient(180deg, #060608 0%, rgba(0, 4, 7, 0.00) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    transform: rotate(180deg);
+    pointer-events: none;
 }
 
 
-.s-hero .container{
+.s-hero .container {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 }
-.s-hero .left{
+
+.s-hero .left {
+    position: relative;
     width: 100%;
     max-width: 62.2rem;
+    animation: fadeLeft 1s forwards;
+    z-index: 10;
 }
 
-.s-hero .left .platform{
+.s-hero .left .platform {
     display: flex;
     margin-bottom: 2.4rem;
 }
 
-.s-hero .left .platform span{
+.s-hero .left .platform span {
     color: #C0C0CC;
     font-size: 1.2rem;
     line-height: 150%;
@@ -92,7 +132,7 @@ header button{
     border-radius: 4px 0px 0px 4px;
 }
 
-.s-hero .left .platform strong{
+.s-hero .left .platform strong {
     border-radius: 0px 4px 4px 0px;
     background-color: #25252e;
     padding: 0.6rem 1rem;
@@ -102,7 +142,7 @@ header button{
 
 }
 
-.s-hero .left h1{
+.s-hero .left h1 {
     font-size: 5.6rem;
     font-weight: 700;
     line-height: normal;
@@ -110,30 +150,30 @@ header button{
     margin-bottom: 8px;
 }
 
-.s-hero .left .description{
+.s-hero .left .description {
     font-size: 1.8rem;
     line-height: 150%;
     margin-bottom: 4.8rem;
 }
 
-.s-hero .left .value{
+.s-hero .left .value {
     margin-bottom: 7.2rem;
 }
 
-.s-hero .left .value h3{
+.s-hero .left .value h3 {
     font-size: 3.2rem;
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 2.4rem;
 }
 
-.s-hero .left .value .btns{
+.s-hero .left .value .btns {
     display: flex;
     align-items: center;
-    gap: 2.2rem;    
+    gap: 2.2rem;
 }
 
-.s-hero .left .value .btns .btn-cart{
+.s-hero .left .value .btns .btn-cart {
     border-radius: 32px;
     background-color: #F55827;
     padding: 1.6rem 4rem;
@@ -141,9 +181,16 @@ header button{
     font-size: 1.6rem;
     font-weight: 500;
     line-height: 150%;
+    transition: all .3s ease;
 }
 
-.s-hero .left .value .btns .btn-favorite{
+.s-hero .left .value .btns .btn-cart:hover {
+    background-color: #CF3302;
+    box-shadow: 0px 0px 0px 3px rgba(245, 88, 39, 0, 30);
+
+}
+
+.s-hero .left .value .btns .btn-favorite {
     width: 56px;
     height: 56px;
     border: 2px solid#2F2F3B;
@@ -151,30 +198,41 @@ header button{
     align-items: center;
     justify-content: center;
     border-radius: 50%;
+    transition: all .3s ease;
 }
 
-.s-hero .left ul{
+.s-hero .left .value .btns .btn-favorite:hover {
+    background-color: #FFF;
+    color: #101014;
+    box-shadow: 0px 0px 0px 3px rgba(255, 255, 255, 0.30);
+}
+
+.s-hero .left .value .btns .btn-cart:hover img {
+    filter: invert(1);
+}
+
+.s-hero .left ul {
     margin-bottom: 1.7rem;
     display: flex;
     align-items: center;
     gap: 1.6rem;
 }
 
-.s-hero .left ul:last-child{
+.s-hero .left ul:last-child {
     margin-bottom: 0;
 }
 
-.s-hero .left ul:last-child li::before{
+.s-hero .left ul:last-child li::before {
     display: none !important;
 }
 
-.s-hero .left ul li{
+.s-hero .left ul li {
     display: flex;
     align-items: center;
     gap: 1.6rem;
 }
 
-.s-hero .left ul li:last-child::before{
+.s-hero .left ul li:last-child::before {
     content: "";
     width: 5px;
     height: 5px;
@@ -183,14 +241,14 @@ header button{
     display: block;
 }
 
-.s-hero .left ul p{
+.s-hero .left ul p {
     color: #F2F2FF;
     font-size: 1.6rem;
     font-weight: 500;
     line-height: 150%;
 }
 
-.s-hero .right{
+.s-hero .right {
     width: 100%;
     max-width: 9.5rem;
     text-align: right;
@@ -199,9 +257,10 @@ header button{
     align-items: flex-end;
     gap: 1.6rem;
     margin-top: 4.3rem;
+    animation: fadeRight 1s forwards;
 }
 
-.s-hero .right span{
+.s-hero .right span {
     border-radius: 6px;
     background-color: #F09104;
     display: block;
@@ -215,7 +274,7 @@ header button{
     line-height: 150%;
 }
 
-.s-hero .right p{
+.s-hero .right p {
     color: #E1E1E1;
     font-size: 1.2rem;
     font-weight: 500;
@@ -224,31 +283,51 @@ header button{
 
 /* ============================================== VIDEOS ============================================== */
 
-.s-videos{
+/*
+.s-videos {
+    position: relative;
     width: 100%;
     padding-top: 8rem;
     padding-bottom: 6.4rem;
     overflow: hidden;
+    display: none;
 }
+*/
 
-.s-videos .container{
+.s-videos:before {
+    content: "";
+    width: 334px;
+    height: 344px;
+    background: linear-gradient(270deg, #060608 -3.29%, rgba(6, 6, 8, 0.00)64.25%);
+    position: absolute;
+    top: 8.9rem;
+    right: 0;
+    z-index: 5;
+    pointer-events: none;
+}
+        
+
+.s-videos .container {
     position: relative;
 }
+        
 
-.s-videos .top{
+.s-videos .top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 3.2rem;
 }
 
-.s-videos .top .swiper-pagination{
+
+
+.s-videos .top .swiper-pagination {
     position: relative;
     width: auto;
     bottom: 0;
 }
 
-.s-videos .top .swiper-pagination .swiper-pagination-bullet{
+.s-videos .top .swiper-pagination .swiper-pagination-bullet {
     width: 6px;
     height: 6px;
     border-radius: 0;
@@ -257,38 +336,42 @@ header button{
 
 }
 
-.s-videos .top .swiper-pagination .swiper-pagination-bullet-active{
+.s-videos .top .swiper-pagination .swiper-pagination-bullet-active {
     background-color: #FFFFFF;
 }
 
 
 
-.s-videos .top h2{
+.s-videos .top h2 {
     font-size: 2.4rem;
     font-weight: 600;
     text-transform: uppercase;
 }
+        
 
-.s-videos .card-video{
+.s-videos .card-video {
     display: block;
     width: 100%;
     max-width: 35.1rem;
 }
+        
 
-.s-videos .card-video .thumbnail{
+.s-videos .card-video .thumbnail {
     position: relative;
     width: 100%;
     height: 21.0rem;
     margin-bottom: 2.2rem;
 }
+        
 
-.s-videos .card-video .thumbnail .thumb{
+.s-videos .card-video .thumbnail .thumb {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
 }
+        
 
-.s-videos .card-video .thumbnail:before{
+.s-videos .card-video .thumbnail:before {
     content: "";
     background: url(/img/assets-spider-man-2/image-hover.svg) no-repeat center center;
     width: 100%;
@@ -300,12 +383,13 @@ header button{
     opacity: 0;
     transition: opacity .3s ease;
 }
+        
 
-.s-videos .card-video:hover .thumbnail:before{
+.s-videos .card-video:hover .thumbnail:before {
     opacity: 1;
 }
 
-.s-videos .card-video .thumbnail .icon{
+.s-videos .card-video .thumbnail .icon {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -316,19 +400,21 @@ header button{
 
 }
 
-.s-videos .card-video:hover .thumbnail .icon{
+
+.s-videos .card-video:hover .thumbnail .icon {
     opacity: 1;
 
 }
 
-.s-videos .card-video span{
+.s-videos .card-video span {
     color: #C0C0CC;
     font-size: 1.4rem;
     font-weight: 500;
     line-height: 150%;
 }
+    
 
-.s-videos .btn{
+.s-videos .btn {
     position: absolute;
     top: 13.3rem;
     width: 4rem;
@@ -339,55 +425,113 @@ header button{
     align-items: center;
     justify-content: center;
     z-index: 10;
-    transition: opacity .3s aese;
-  
+    transition: opacity .3s ease;
+
 }
 
-.s-videos .btn.swiper-button-disabled{
+
+.s-videos .btn.swiper-button-disabled {
     opacity: 0;
 }
 
-.s-videos .btn-prev{
+.s-videos .btn-prev {
     left: 0;
     transform: rotate(180deg);
 }
 
-.s-videos .btn-next{
+.s-videos .btn-next {
     right: 0;
+} 
+
+/* ========================================================= VILÃO ========================================================= */
+
+.s-vilao {
+    position: relative;
+    width: 100%;
+    height: 80rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    animation: changeBG 10s infinite linear;
+
 }
 
+.s-vilao:before {
+    content: "";
+    width: 100%;
+    height: 21.6rem;
+    background: linear-gradient(180deg, #060608 0%, rgba(0, 4, 7, 0.00) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+
+.s-vilao:after {
+    content: "";
+    width: 100%;
+    height: 21.6rem;
+    background: linear-gradient(180deg, #060608 0%, rgba(0, 4, 7, 0.00) 100%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    transform: rotate(180deg);
+}
+
+.s-vilao h2 {
+    font-size: 4.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.s-vilao p {
+    color: var(--gray-light-02, #CECED9);
+    text-align: center;
+    font-size: 1.8rem;
+    line-height: 150%;
+    margin-bottom: 7.2rem;
+
+
+}
 
 
 /* ============================================== FOOTER ============================================== */
 
-footer{
+footer {
     position: relative;
     padding-top: 9.6rem;
     padding-bottom: 7.2rem;
 }
 
-footer:before{
+footer:before {
     content: "";
     width: 100%;
     height: 1.6rem;
-    background: url(/img/assets-spider-man-2/line.svg) no-repeat center center;   
+    background: url(/img/assets-spider-man-2/line.svg) no-repeat center center;
     position: absolute;
     top: 0;
 
 }
 
-footer .container{
+footer .container {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
 
-footer .left{
+footer .left {
     width: 100%;
     max-width: 66.8rem;
 }
 
-footer .left strong{
+footer .left strong {
     font-family: 'Mohave', sans-serif;
     font-size: 1.6rem;
     font-weight: 600;
@@ -396,20 +540,242 @@ footer .left strong{
     display: block;
 }
 
-footer .left p{
+footer .left p {
     color: #CECED9;
     font-size: 1.4rem;
     line-height: 150%;
 }
 
-footer .right{
+footer .right {
     display: flex;
     align-items: center;
     gap: 2.4rem;
 }
 
-footer .right span{
+footer .right span {
     font-size: 1.2rem;
     font-weight: 500;
     line-height: 150%;
+}
+
+
+footer .container{
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+}
+
+footer .left{
+    text-align: center;
+}
+
+
+/* =============================================== Animação =============================================== */
+
+@keyframes changeBG {
+    0% {
+        background-image: url(/img/assets-spider-man-2/bg-venon.png);
+    }
+
+    10% {
+        background-image: url(/img/assets-spider-man-2/bg/01.png);
+    }
+
+    20% {
+        background-image: url(/img/assets-spider-man-2/bg/02.png);
+    }
+
+    30% {
+        background-image: url(/img/assets-spider-man-2/bg/03.png);
+    }
+
+    40% {
+        background-image: url(/img/assets-spider-man-2/bg/04.png);
+    }
+
+    50% {
+        background-image: url(/img/assets-spider-man-2/bg/05.png);
+    }
+
+    60% {
+        background-image: url(/img/assets-spider-man-2/bg/06.png);
+    }
+
+    70% {
+        background-image: url(/img/assets-spider-man-2/bg/07.png);
+    }
+
+    80% {
+        background-image: url(/img/assets-spider-man-2/bg/08.png);
+    }
+
+    90% {
+        background-image: url(/img/assets-spider-man-2/bg/09.png);
+    }
+
+    100% {
+        background-image: url(/img/assets-spider-man-2/bg-venon.png);
+    }
+}
+
+@keyframes fadeLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes fadeRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+}
+
+
+/* =============================================== Responsividade  =============================================== */
+
+@media(max-width: 1200px){
+    .s-hero{
+        height: auto;
+        padding-top: 7rem;
+        padding-bottom: 7rem;
+
+    }
+    .s-videos{
+        padding-top: 6rem;
+        padding-bottom: 6rem;
+    }
+
+    .s-videos .btn{
+        display: none;
+    }
+
+    .s-vilao{
+        height: 55rem;
+    }
+
+    footer{
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+    }
+
+}
+
+@media(max-width: 991px){
+    header nav{
+        display: none;
+    }
+
+    .s-hero .left{
+        max-width: 100%;
+    }
+    
+    .s-hero .right{
+        display: none;
+    }
+
+    .s-videos:before,
+    .s-videos:after{
+        height: 10rem;
+    }
+
+    footer .container{
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+    }
+
+    footer .container{
+        text-align: center;
+    }
+}
+
+@media(max-width: 560px){
+    header .logo{
+        max-width: 12.6rem;
+    }
+
+    header button{
+        padding: 0.95rem 2rem;
+    }
+
+    .s-hero{
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        background-size: 1120px;
+        background-position-x: 62%;
+    }
+    
+    .s-hero .left h1{
+        font-size: 4.2rem;
+        max-width: 84%;
+        line-height: 120%;
+    }
+
+    .s-hero .left .description{
+        font-size: 1.6rem;
+        margin-bottom: 3rem;
+    }
+    .s-hero .left .value h3{
+        margin-bottom: 1rem;
+    }
+
+    .s-hero .left .value{
+        margin-bottom: 4rem;
+    }
+    
+    .s-hero .left ul p {
+        font-size: 1.4rem;
+        
+    }
+
+    .s-hero .left ul:nth-child(2){
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .s-hero .left ul li{
+        gap: 1rem;
+    }
+
+    .s-videos{
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .s-vilao{
+        height: auto;
+        padding: 6rem 0;
+        background-size: 90rem;
+    }
+
+    .s-vilao h2{
+        font-size: 3.6rem;
+    }
+
+    .s-vilao p{
+        font-size: 1.6rem;
+        max-width: 30rem;
+        margin-bottom: 40px;
+    }
+    footer{
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    footer:before{
+        background-size: 120%;
+    }
+
 }
